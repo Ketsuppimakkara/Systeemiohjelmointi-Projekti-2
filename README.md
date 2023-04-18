@@ -1,15 +1,15 @@
 # Operating systems and system programming course work - Kernel hacking
 
-This is a collection of custom implementations of basic Unix utilities. Includes cat, grep, zip and unzip
+This is a collection of custom implementations of basic Unix utilities created in c. Includes cat, grep, zip and unzip
 
-** My-cat
+**My-cat**
 My-cat is a simple program that simply prints out the contents of a file. It is given one or more
 filenames as parameters. My-cat will print out the contents of each file, with nothing separating the 
 files in the output. Redirecting the output to a file using the ‘>’ character works as well, for example 
 “./my-cat file1 file2>output”.
 
 
-** My-grep
+**My-grep**
 My-grep is given a search term and zero or more files as arguments. My-grep will then search for the 
 term in the contents of the files, and print out all matching lines. If multiple matches are found on 
 the same line, the line gets printed out for each match. If no files are given, stdin will be searched 
@@ -20,9 +20,9 @@ One change I made from Linux’s grep was that I printed every match to a separa
 standard grep recolors all matches in a given line. Standard grep seems to continue looking for new 
 matches after the matched pattern, but if a new match begins within the matched pattern, grep 
 misses it. For example, if you search for “text” in the repeating pattern “textextext” grep will match 
-“<sub>text</sub>ex<sub>text</sub>”, but my-grep will match “<sub>text</sub>extext” “tex<sub>text</sub>ext” and “textex<sub>text</sub>”.
+“**text**ex**text**”, but my-grep will match “**text**extext” “tex**text**ext” and “textex**text**”.
 
-** My-zip and my-unzip
+**My-zip and my-unzip**
 My-zip uses run-length-encoding to try and compress the information of the given files. My-zip is 
 given one or more file names, which will be compressed into a binary file consisting of a 4-byte 
 integer followed by a 1-byte character. When compressing multiple files, the files will be compressed 
